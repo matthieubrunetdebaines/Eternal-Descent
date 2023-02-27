@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <!------- HEADER -------->
+        <!-- Nous allons disposer le titre du jeu à gauche et le menu (burger) à droite avec flexbox -->
+        <header>
+            <!-- Titre du jeu -->
+            <div id="logo">
+                <h1>
+                    Eternal Descent
+                </h1>
+                <img src="../assets/img/Logo.png" alt="logo" id="img_logo">
+            </div>
+            <!-- Menu navigation -->
+            <div id="navbar">
+                <ul>
+                    <li>
+                        <a href="../index.html">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="../boutique/boutique.html">Boutique</a>
+                    </li>
+                    <li>
+                        <a href="../roulette/roulette.html">Concours</a>
+                    </li>
+                    <li>
+                        <a href="../contact/contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../assets/icons/panier_64.png" alt="Panier">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- La div qui englobe la span du menu burger -->
+            <div id="divSpanBurger">
+                <span class="spanBurger" id="topSpan"></span>
+                <span class="spanBurger" id="middleSpan"></span>
+                <span class="spanBurger" id="bottomSpan"></span>
+            </div>
+        </header>
+        <main>
+            <section class="contact_map">
+                <div class="contact">
+                    <h2>Contact</h2>
+                    <!-- Icones réseaux sociaux -->
+                    <div class="social">
+                        <figure><a href="#"><img src="../assets/icons/instagram.png" alt="instagram"></a></figure>
+                        <figure><a href="#"></a><img src="../assets/icons/twitter.png" alt="twitter"></a></figure>
+                        <figure><a href="#"></a><img src="../assets/icons/discord.png" alt="discord"></a></figure>
+                    </div>
+                    <p>Email: eternal.brjm@gmail.com<br>
+                        Téléphone: 09-72-72-39-36<br>
+                        Adresse: 54, Boulevard Lavéran, 13013 Marseille
+                    </p>
+                </div>
+                <!-- Map de l'adresse -->
+                <div class="map"><iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2902.316543572532!2d5.4143684!3d43.328564799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9bf97db185181%3A0x4b60050f7a0a6fd1!2s54%20Bd%20Lav%C3%A9ran%2C%2013013%20Marseille!5e0!3m2!1sfr!2sfr!4v1676983651611!5m2!1sfr!2sfr"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            </section>
+            <h2>Assistance / FAQ</h2>
+            <!-- Liste déroulante de question -->
+            <form action="" class="faq">
+                <label for="question">Choisissez votre question</label>
+                <select name="question" id="question">
+                    <option value=""></option>
+                    <option value="date">Quelle est la date de sortie officielle ?</option>
+                    <option value="access">Y aura t'il une bêta ou un accès anticipé ?</option>
+                    <option value="online">Est-ce qu'il y aura un multijoueurs en ligne ?</option>
+                    <option value="coop">Peut-on faire l'aventure en coopération ?</option>
+                </select>
+            </form>
+            <!-- Réponse à affiche selon les question choisies qui arrivent en slide depuis la gauche du site-->
+            <div class="answer">
+                <div class="answer_date">
+                    <p>La sortie officielle du jeu est prévu le 11 juillet 2023.</p>
+                </div>
+                <div class="answer_access">
+                    <p>Un accès anticipé de 72h avant la sortie officielle sera disponible pour les personnes
+                        ayant précommandé le jeu.</p>
+                </div>
+                <div class="answer_online">
+                    <p>Le multijoueur en ligne sera disponible sur le jeu et intégrera un système de ranked.</p>
+                </div>
+                <div class="answer_coop">
+                    <p>L'aventure peut se faire en coopération en ligne à 2 joueurs maximum.</p>
+                </div>
+            </div>
+            <div class="question2">
+                <div>
+                    <p>Si vous avez une autre question merci de nous la transmettre ci dessous</p>
+                </div>
+                <textarea name="" id="free_question" cols="15" rows="3"></textarea>
+                <input type="submit" value="Transmettre la question" id="submit_question">
+            </div>
+            <div class="question_send"></div>
+
+        </main>
+        <footer>
+            <div>
+                <li><a href="">Privacy policy </a></li>
+                <li> │ </li>
+                <li><a href="">Gestion des cookies </a></li>
+                <li> │ </li>
+                <li><a href="">Politique des cookies </a></li>
+                <li><a href="">Informations légales </a></li>
+                <li> │ </li>
+                <li><a href="">Conditions d’utilisation</a></li>
+            </div>
+            <span id="team">© 2023 team BRJM </span>
+        </footer>
+
+    </div>
+    <script type="" src="../contact/contact.js"></script>
+</body>
+
+</html>

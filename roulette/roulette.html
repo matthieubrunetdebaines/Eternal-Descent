@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="roulette.css">
+    <title>Eternal Roulette</title>
+</head>
+
+<body>
+
+    <!------- HEADER -------->
+    <!-- Nous allons disposer le titre du jeu à gauche et le menu (burger) à droite avec flexbox -->
+
+    <header>
+
+        <!-- Titre du jeu -->
+
+        <div id="logo">
+            <h1>
+                Eternal Descent
+            </h1>
+            <img src="../assets/img/Logo.png" alt="logo" id="img_logo">
+        </div>
+
+        <!-- Menu navigation -->
+
+        <div id="navbar">
+            <ul>
+                <li>
+                    <a href="../index.html">Accueil</a>
+                </li>
+                <li>
+                    <a href="../boutique/boutique.html">Boutique</a>
+                </li>
+                <li>
+                    <a href="roulette.html">Concours</a>
+                </li>
+                <li>
+                    <a href="../contact/contact.html">Contact</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../assets/icons/panier_64.png" alt="Panier">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- La div qui englobe la span du menu burger -->
+
+        <div id="divSpanBurger">
+            <span class="spanBurger" id="topSpan"></span>
+            <span class="spanBurger" id="middleSpan"></span>
+            <span class="spanBurger" id="bottomSpan"></span>
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <div id="spin_button" class="pulse">
+            <p id="text_startStop">Cliquez pour lancer la roue du destin</p>
+            <img src="../assets/img/roulette/axis-removebg-preview.png" alt="haches" id="axes">
+        </div>
+
+        <div id="wheel">
+            <img src="../assets/img/roulette/knife.png" alt="epee" id="sword">
+            <img src="../assets/img/Logo.png" alt="logo_dragon" id="dragon_wheel">
+        </div>
+
+        <div id="gain">
+            <p id="pre_gift">Qu'allez vous gagner?</p>
+            <p id="gift"></p>
+        </div>
+
+        <!-- pour animer une explosion, je crée des spans representant les étincelles -->
+
+
+    </main>
+
+
+    <footer>
+
+        <div>
+            <li><a href="">Privacy policy </a></li>
+            <li> │ </li>
+            <li><a href="">Gestion des cookies </a></li>
+            <li> │ </li>
+            <li><a href="">Politique des cookies </a></li>
+            <!-- <li>  │  </li> -->
+            <li><a href="">Informations légales </a></li>
+            <li> │ </li>
+            <li><a href="">Conditions d’utilisation</a></li>
+        </div>
+        <span id="team">© 2023 team BRJM </span>
+    </footer>
+
+
+    <script type="text/javascript" src="appRoulette.js"></script>
+
+</body>
+
+</html>

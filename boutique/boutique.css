@@ -1,0 +1,599 @@
+@font-face {
+    font-family: "poppins";
+    src: url("../assets/fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: "NightmarePill";
+    src: url("../assets/fonts/NightmarePills-BV2w.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "poppins", sans-serif;
+    font-size: 0.9rem;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Header Matthieu */
+
+/* Je sépare le header en 2 parties, d'un côté le titre du jeu et de l'autre la navbar et je les dispose avec flexbox */
+
+header {
+    background: linear-gradient(180deg, #000000 0%, #082B08 42.86%, #082B08 59.43%, #000000 100%);
+    /* mise en forme du padding et de la hauteur */
+    height: 15vh;
+    width: 100%;
+    padding-top: 2vh;
+    padding-left: 2%;
+    padding-right: 2%;
+    /* mise en place du flex */
+}
+
+#logo {
+    position: relative;
+}
+
+h1 {
+    font-family: "NightmarePill";
+    color: #C19D53;
+    font-size: 2.5rem;
+    word-spacing: 120px;
+    text-shadow: 0 0 20px rgba(9, 255, 0, 0.308);
+    width: 100%;
+    padding-top: 2vh;
+}
+
+#img_logo {
+    /* l'image est en absolute pour se placer sur le H1 sans qu'il ne bouge */
+    /* elle disparait au responsive te le word spacing du h1 disparait */
+    width: 100px;
+    position: absolute;
+    top: 0;
+    left: 130px;
+}
+
+
+/* NAVBAR DU MENU BURGER DEPLOYE */
+
+
+div#navbar {
+    /*width: 100%;
+   */
+    visibility: visible;
+    flex-direction: column;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 15px;
+    margin-left: -100%;
+    transition: 0.5s;
+    z-index: 10;
+}
+
+/* Je crée une classe qui permet d'afficher/masquer le menu burger */
+div#navbar.mobile_menu {
+    margin-left: 0;
+    transition: 0.5s;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    padding-top: 20vh
+}
+
+#navbar ul {
+    /* j'espace les li avec flexbox et du padding sur les li*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+#navbar ul li {
+    padding: 30px;
+}
+
+#navbar ul li:last-child {
+    display: flex;
+    align-items: center;
+}
+
+#count {
+    font-size: 1.4em;
+    font-weight: bold;
+    padding-left: 5px;
+    color: #C19D53;
+
+}
+
+#navbar ul li a {
+    font-size: 1.5rem;
+    color: #C19D53;
+    font-family: "poppins";
+}
+
+#navbar ul li a:hover {
+    font-weight: bold(200);
+    border: 10px solid transparent;
+    border-image-source: url("../assets/img/roulette/elden-ring-border-leaf-removebg-preview.png");
+    border-image-slice: 0 0 60 0;
+    border-image-width: 0px 0px 10px 0px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: repeat repeat;
+    padding: 2px 0;
+    transition: 0.4s;
+    text-shadow: 0 0 15px #44ff0041;
+}
+
+#navbar ul li a img {
+    width: 30px;
+}
+
+
+
+/* LA DIV SPAN BURGER */
+
+#divSpanBurger {
+    display: flex;
+    flex-direction: column;
+    height: 3vh;
+    width: 5%;
+    justify-content: space-around;
+    /* Je le mets en position absolute pour plus de liberté lors de la mise en place du menu burger */
+    position: absolute;
+    top: 5.2vh;
+    right: 5%;
+    z-index: 100;
+}
+
+#divSpanBurger:hover {
+    cursor: pointer;
+    transform: rotate(360deg) scale(1.1);
+    transition: 0.8s;
+}
+
+.spanBurger {
+    /* mise en forme des span du menu burger */
+    height: 3px;
+    width: 30px;
+    margin: auto;
+    background-color: #C19D53;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #f0e0c1;
+}
+
+.deleteSpan {
+    display: none;
+}
+
+.crossSpan1 {
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+.crossSpan2 {
+    transform: rotate(-45deg);
+    position: absolute;
+
+}
+
+
+
+/* Header Matthieu */
+
+
+
+main {
+    background: url("../assets/img/body-bg.jpg") fixed center/cover no-repeat;
+    width: 100%;
+    min-height: 120vh;
+    padding: 30px 20px 30px 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+}
+
+main h2 {
+    width: 90%;
+    font-size: 1.1rem;
+    color: #C19D53;
+    text-align: center;
+}
+
+/* Composant goodie */
+article {
+    transform: scale(0.9);
+    width: 400px;
+    height: 30vh;
+    padding: 15px;
+    background-color: black;
+    color: white;
+    box-shadow: 0px 0px 20px #417A27;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+article:hover {
+    transform: scale(1);
+    transition: 2s;
+}
+
+figure {
+    width: 40%;
+}
+
+button {
+    background-color: #417A27;
+    color: white;
+    padding: 5px;
+    width: 250px;
+    min-height: 40px;
+    border-radius: 15px;
+    border: none;
+}
+
+.addToCart {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(60%);
+}
+
+.addToCart:hover {
+    box-shadow: 0px 0px 30px #c19d53;
+    transform: translateY(60%);
+    transition: 1s;
+}
+
+.description-goodie {
+    padding: 10px;
+}
+
+.description-goodie>p {
+    margin-right: 40px;
+    text-align: left;
+    padding: 5px;
+}
+
+/* Composant mug blanc */
+#mug-blanc img {
+    width: 100%;
+    object-fit: contain;
+    transform: scale(2.5);
+}
+
+/* Composant mug noir */
+#mug-noir img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Composant t-shirt noir */
+#t-shirt-blanc img {
+    width: 100%;
+    object-fit: cover;
+    transform: scale(1.8);
+}
+
+/* Composant t-shirt blanc */
+#t-shirt-noir img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Composat poster métal */
+#poster-metal img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    transform: scale(0.9);
+}
+
+/* Composat peluche */
+#peluche img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Travail du panier popup */
+
+#popup-panier {
+    /* display: none; */
+    width: 80%;
+    color: white;
+    background-color: #000000;
+    box-shadow: 0px 0px 20px #417A27;
+    border-radius: 20px;
+    padding: 15px;
+    position: absolute;
+    top: 80px;
+    z-index: 200;
+}
+
+#btn-close {
+    background-color: rgb(160, 42, 42);
+    width: 50px;
+    height: 20px;
+    border-radius: 10px;
+    margin-left: 100%;
+    transform: translateX(-100%);
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+#btn-close:hover {
+    cursor: pointer;
+}
+
+#popup-panier p {
+    width: 50%;
+    margin: 10px auto;
+    text-align: center;
+    color: #C19D53;
+    font-size: 1.2rem;
+}
+
+#popup-panier p:nth-child(4) {
+    margin-top: 2rem;
+}
+
+#popup-panier p:nth-child(4),
+#popup-panier p:nth-child(5) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+}
+
+#popup-panier p:nth-child(6) {
+    color: white;
+    font-size: 0.7rem;
+    text-align: left;
+}
+
+#delivery-price,
+#total-price {
+    font-size: 1.1rem;
+}
+
+#total-price {
+    margin-left: auto;
+}
+
+
+#popup-panier table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+#popup-panier th,
+td {
+    width: 200px;
+}
+
+#popup-panier th {
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+#popup-panier td {
+    padding-top: 25px;
+    padding-bottom: 4px;
+    border-bottom: #c19d53 solid 1px;
+}
+
+#btn-paid {
+    display: block;
+    width: 40%;
+    margin: 30px auto;
+    font-size: 1rem;
+}
+
+#btn-delete {
+    display: block;
+    background-color: rgb(160, 42, 42);
+    width: 20%;
+    font-size: 0.8rem;
+    margin: 30px auto;
+}
+
+#btn-delete:hover {
+    cursor: pointer;
+}
+
+.btn-plus,
+.btn-moins {
+    width: 30px;
+    font-size: 1.5rem;
+    transform: scale(0.8);
+    background-color: #c19d53;
+}
+
+.btn-moins {
+    border-radius: 15px 0 0 15px;
+    /* margin-left: 9vw; */
+}
+
+.btn-plus {
+    border-radius: 0 15px 15px 0;
+}
+
+.right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Classe créer pour servir à javascript à appliquer un blur sur l'arrière-plan lors de l'affichage du panier */
+.blur {
+    filter: blur(10px);
+}
+
+/* Création d'une classe qui servira à appliquer un display:none au tableau ainsi qu'aux éléments du tableau */
+.off {
+    display: none;
+}
+
+/* Footer by Ramy */
+
+footer div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    line-height: 25px;
+}
+
+#team {
+    margin-top: 30px;
+}
+
+footer {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(rgba(0, 0, 0, 1), rgba(8, 43, 8, 1), rgba(8, 43, 8, 1), rgba(0, 0, 0, 1));
+    color: white;
+}
+
+footer a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: white;
+}
+
+
+
+/* A partir de maintenant, on trouve le code Responsive */
+
+/* Responsive du header */
+@media screen and (min-width: 1470px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    #logo h1 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    div#navbar {
+        visibility: visible;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 50%;
+        height: auto;
+        position: static;
+        backdrop-filter: none;
+        margin: 0;
+        transform: translateX(0);
+    }
+
+    div#navbar.mobile_menu {
+        margin-left: 0;
+        transition: 0.5s;
+        width: 50%;
+        height: 100%;
+        top: 0;
+        padding-top: 0;
+    }
+
+
+    #navbar ul {
+        /* j'espace les li avec flexbox et du padding sur les li*/
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-around;
+    }
+
+    #navbar ul li {
+        padding: 0 10%;
+    }
+
+    #navbar ul li a {
+        font-size: 1.2rem;
+    }
+
+    #divSpanBurger {
+        visibility: hidden;
+    }
+
+    h1 {
+        word-spacing: 0;
+        font-size: 5rem;
+    }
+
+    #img_logo {
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    h1 {
+        font-size: 2rem;
+        word-spacing: 70px;
+    }
+
+    #img_logo {
+        width: 70px;
+        top: 6px;
+        left: 98px;
+    }
+
+    #divSpanBurger {
+        top: 5vh;
+    }
+
+    #navbar {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive du panier */
+
+/* @media screen and (max-width: 720px) {
+    #popup-panier th,
+    td {
+        width: 150px;
+    }
+} */
+
+.hide > td:last-child {
+    width: 100px;
+}

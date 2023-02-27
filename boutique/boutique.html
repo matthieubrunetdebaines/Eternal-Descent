@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="boutique.css">
+    <title>Boutique</title>
+</head>
+
+<body>
+    <!-- Header Matthieu -->
+    <!------- HEADER -------->
+    <!-- Nous allons disposer le titre du jeu à gauche et le menu (burger) à droite avec flexbox -->
+
+    <header>
+
+        <!-- Titre du jeu -->
+
+        <div id="logo">
+            <h1>
+                Eternal Descent
+            </h1>
+            <img src="../assets/img/Logo.png" alt="logo" id="img_logo">
+        </div>
+
+        <!-- Menu navigation -->
+
+        <div id="navbar">
+            <ul>
+                <li>
+                    <a href="../index.html">Accueil</a>
+                </li>
+                <li>
+                    <a href="boutique.html">Boutique</a>
+                </li>
+                <li>
+                    <a href="../roulette/roulette.html">Concours</a>
+                </li>
+                <li>
+                    <a href="../contact/contact.html">Contact</a>
+                </li>
+                <li>
+                    <a id="cart" href="#">
+                        <img src="../assets/icons/panier_64.png" alt="Panier">
+                    </a>
+                    <span id="count">0</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- La div qui englobe la span du menu burger -->
+
+        <div id="divSpanBurger">
+            <span class="spanBurger" id="topSpan"></span>
+            <span class="spanBurger" id="middleSpan"></span>
+            <span class="spanBurger" id="bottomSpan"></span>
+        </div>
+
+    </header>
+    <!-- Header Matthieu -->
+
+    <main>
+        <!-- Le panier qui apparaitra sous forme de popup sera en position absolute -->
+        <div id="popup-panier" class="off">
+            <button id="btn-close">X</button>
+            <p>Votre panier</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Article</th>
+                        <th>Nombre</th>
+                        <th>Prix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="mb-tab off hide">
+                        <td>Mug blanc</td>
+                        <td id="mb-count" class="reset">0</td>
+                        <td id="mb-price" class="reset">0</td>
+                        <td class="right"><span><button class="btn-moins mb">-</button><button
+                                    class="btn-plus mb">+</button></span></td>
+                    </tr>
+                    <tr class="mn-tab off hide">
+                        <td>Mug noir</td>
+                        <td id="mn-count" class="reset">0</td>
+                        <td id="mn-price" class="reset">0</td>
+                        <td class="right"><span><button class="btn-moins mn">-</button><button
+                                    class="btn-plus mn">+</button></span></td>
+
+                    </tr>
+                    <tr class="tsb-tab off hide">
+                        <td>T-Shirt blanc</td>
+                        <td id="tsb-count" class="reset">0</td>
+                        <td id="tsb-price" class="reset">0</td>
+                        <td class="right"><span><button class="btn-moins tsb">-</button><button
+                                    class="btn-plus tsb">+</button></span></td>
+
+                    </tr>
+                    <tr class="tsn-tab off hide">
+                        <td>T-Shirt noir</td>
+                        <td id="tsn-count" class="reset">0</td>
+                        <td id="tsn-price" class="reset">0</td>
+                        <td class="right"><span><button class="btn-moins tsn">-</button><button
+                                    class="btn-plus tsn">+</button></span></td>
+
+                    </tr>
+                    <tr class="poster-tab off hide">
+                        <td>Poster</td>
+                        <td id="poster-count" class="reset">0</td>
+                        <td id="poster-price" class="reset">0</td>
+                        <td class="right"><span><button class="btn-moins poster">-</button><button
+                                    class="btn-plus poster">+</button></span></td>
+
+                    </tr>
+                    <tr class="peluche-tab off hide">
+                        <td>Peluche</td>
+                        <td id="peluche-count" class="reset">0</td>
+                        <td id="peluche-price" class="reset">0</td>
+                        <td class="right"><span><button class="btn-moins peluche">-</button><button
+                                    class="btn-plus peluche">+</button></span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Frais de port*<span id="delivery-price">10€</span></p>
+            <p>Total de vos achats<span id="total-price">0€</span>€</p>
+            <p>*Offert à partir de 50€ d'achats.</p>
+            <button id="btn-paid" type="submit">Valider vos achats</button>
+            <button id="btn-delete" type="submit">Vider votre panier</button>
+        </div>
+        <!-- La partie visible du main -->
+        <h2 class="title-bg">Découvrez notre liste de produit dérivés qui vous permettront de jouer à Eternal Descent en
+            immersion
+            totale.</h2>
+        <!-- Composant mug blanc -->
+        <article id="mug-blanc" class="art-bg">
+            <figure><img src="../assets/img/goodies/mug_blanc.png"
+                    alt="Image d'un mug blanc avec une illustration d'Eternal Descent">
+            </figure>
+            <div class="description-goodie">
+                <p>Mug blanc</p>
+                <p>Taille unique</p>
+            </div>
+            <button id="add-mug-blanc" class="addToCart" type="submit">Ajouter au panier <span>20€</span></button>
+        </article>
+        <!-- Compoosant mug noir -->
+        <article id="mug-noir" class="art-bg">
+            <figure><img src="../assets/img/goodies/mug_noir.png"
+                    alt="Image d'un mug noir floqué une illustration d'Eternal Descent">
+            </figure>
+            <div class="description-goodie">
+                <p>Mug noir</p>
+                <p>Taille unique</p>
+            </div>
+            <button id="add-mug-noir" class="addToCart" type="submit">Ajouter au panier <span>20€</span></button>
+        </article>
+        <!-- Composant t-shirt blanc -->
+        <article id="t-shirt-blanc" class="art-bg">
+            <figure><img src="../assets/img/goodies/t-shirt-blanc.png"
+                    alt="Image d'un t-shirt blanc floqué avec une illustration d'Eternal Descent">
+            </figure>
+            <div class="description-goodie">
+                <p>T-shirt blanc</p>
+                <p>Taille unique</p>
+            </div>
+            <button id="add-tshirt-blanc" class="addToCart" type="submit">Ajouter au panier <span>35€</span></button>
+        </article>
+        <!-- Composant t-shirt noir -->
+        <article id="t-shirt-noir" class="art-bg">
+            <figure><img src="../assets/img/goodies/t-shirt_noir.png"
+                    alt="Image d'un t-shirt noir floqué avec une illustration d'Eternal Descent">
+            </figure>
+            <div class="description-goodie">
+                <p>T-shirt noir</p>
+                <p>Taille unique</p>
+            </div>
+            <button id="add-tshirt-noir" class="addToCart" type="submit">Ajouter au panier <span>35€</span></button>
+        </article>
+        <!-- Composant Poster métal -->
+        <article id="poster-metal" class="art-bg">
+            <figure><img src="../assets/img/illus_4.png"
+                    alt="Image d'un poster en métal représentant une illustration d'un combat à venir dans Eternal Descent">
+            </figure>
+            <div class="description-goodie">
+                <p>Poster en métal</p>
+                <p>Taille unique</p>
+            </div>
+            <button id="add-poster" class="addToCart" type="submit">Ajouter au panier <span>60€</span></button>
+        </article>
+        <!-- Composant Peluche -->
+        <article id="peluche" class="art-bg">
+            <figure><img src="../assets/img/goodies/peluche.png"
+                    alt="Image de la peluche officielle du jeu Eternal Descent">
+            </figure>
+            <div class="description-goodie">
+                <p>Peluche</p>
+                <p>Taille unique</p>
+            </div>
+            <button id="add-peluche" class="addToCart" type="submit">Ajouter au panier <span>40€</span></button>
+        </article>
+    </main>
+    <!-- Footer Ramy -->
+    <footer>
+        <div>
+            <li><a href="">Privacy policy </a></li>
+            <li> │ </li>
+            <li><a href="">Gestion des cookies </a></li>
+            <li> │ </li>
+            <li><a href="">Politique des cookies </a></li>
+            <li><a href="">Informations légales </a></li>
+            <li> │ </li>
+            <li><a href="">Conditions d’utilisation</a></li>
+        </div>
+        <span id="team">© 2023 team BRJM </span>
+    </footer>
+    <!-- Footer Ramy -->
+
+    <script type="text/javascript" src="../assets/js/boutique/boutique.js"></script>
+
+</body>
+
+</html>

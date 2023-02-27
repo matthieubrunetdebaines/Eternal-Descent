@@ -1,0 +1,427 @@
+@font-face {
+    font-family: "NightmarePill";
+    src: url("../assets/fonts/NightmarePills-BV2w.ttf");
+}
+
+@font-face {
+    font-family: "PoppinsReg";
+    src: url("../assets/fonts/Poppins-Regular.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #C19D53;
+    font-family: "PoppinsReg";
+}
+
+/* Je sépare le header en 2 parties, d'un côté le titre du jeu et de l'autre la navbar et je les dispose avec flexbox */
+
+header {
+    background: linear-gradient(180deg, #000000 0%, #082B08 42.86%, #082B08 59.43%, #000000 100%);
+    /* mise en forme du padding et de la hauteur */
+    height: 15vh;
+    width: 100%;
+    padding-top: 2vh;
+    padding-left: 2%;
+    padding-right: 2%;
+    /* mise en place du flex */
+}
+
+#logo {
+    position: relative;
+}
+
+h1 {
+    font-family: "NightmarePill";
+    font-size: 2.5rem;
+    word-spacing: 120px;
+    text-shadow: 0 0 20px rgba(9, 255, 0, 0.308);
+    width: 100%;
+    padding-top: 2vh;
+}
+
+#img_logo {
+    /* l'image est en absolute pour se placer sur le H1 sans qu'il ne bouge */
+    /* elle disparait au responsive te le word spacing du h1 disparait */
+    width: 100px;
+    position: absolute;
+    top: 0;
+    left: 130px;
+}
+
+
+/* NAVBAR DU MENU BURGER DEPLOYE */
+
+
+div#navbar {
+    /* width: 100%; */
+    visibility: visible;
+    flex-direction: column;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* left: 40%; */
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    margin-left: -100%;
+    transition: 0.5s;
+    z-index: 100;
+}
+
+/* Je crée une classe qui permet d'afficher/masquer le menu burger */
+div#navbar.mobile_menu {
+    margin-left: 0;
+    transition: 0.5s;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    padding-top: 20vh
+}
+
+#navbar ul {
+    /* j'espace les li avec flexbox et du padding sur les li*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+#navbar ul li {
+    padding: 30px;
+}
+
+#navbar ul li a {
+    font-size: 1.5rem;
+}
+
+#navbar ul li a:hover {
+    font-weight: bold(200);
+    border: 10px solid transparent;
+    border-image-source: url("../assets/img/roulette/elden-ring-border-leaf-removebg-preview.png");
+    border-image-slice: 0 0 60 0;
+    border-image-width: 0px 0px 10px 0px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: repeat repeat;
+    padding: 2px 0;
+    transition: 0.4s;
+    text-shadow: 0 0 15px #44ff0041;
+}
+
+#navbar ul li a img {
+    width: 30px;
+}
+
+
+
+/* LA DIV SPAN BURGER */
+
+#divSpanBurger {
+    display: flex;
+    flex-direction: column;
+    height: 3vh;
+    width: 5%;
+    justify-content: space-around;
+    /* Je le mets en position absolute pour plus de liberté lors de la mise en place du menu burger */
+    position: absolute;
+    top: 5.2vh;
+    right: 5%;
+    z-index: 1000;
+}
+
+#divSpanBurger:hover {
+    cursor: pointer;
+    transform: rotate(360deg) scale(1.1);
+    transition: 0.8s;
+}
+
+.spanBurger {
+    /* mise en forme des span du menu burger */
+    height: 3px;
+    width: 30px;
+    margin: auto;
+    background-color: #C19D53;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #f0e0c1;
+}
+
+.deleteSpan {
+    display: none;
+}
+
+.crossSpan1 {
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+.crossSpan2 {
+    transform: rotate(-45deg);
+    position: absolute;
+
+}
+
+@media screen and (min-width: 1470px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    #logo h1 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    div#navbar {
+        visibility: visible;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 50%;
+        height: auto;
+        position: static;
+        backdrop-filter: none;
+        margin: 0;
+        transform: translateX(0);
+    }
+
+    div#navbar.mobile_menu {
+        margin-left: 0;
+        transition: 0.5s;
+        width: 50%;
+        height: 100%;
+        top: 0;
+        padding-top: 0;
+    }
+
+
+    #navbar ul {
+        /* j'espace les li avec flexbox et du padding sur les li*/
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-around;
+    }
+
+    #navbar ul li {
+        padding: 0 10%;
+    }
+
+    #navbar ul li a {
+        font-size: 1.2rem;
+    }
+
+    #divSpanBurger {
+        visibility: hidden;
+    }
+
+    h1 {
+        word-spacing: 0;
+        font-size: 5rem;
+    }
+
+    #img_logo {
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    h1 {
+        font-size: 2rem;
+        word-spacing: 70px;
+    }
+
+    #img_logo {
+        width: 70px;
+        top: 6px;
+        left: 98px;
+    }
+
+    #divSpanBurger {
+        top: 5vh;
+    }
+
+    #navbar {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
+/* MAIN */
+
+main {
+    background: url("../assets/img/main-background.jpg") fixed center/cover no-repeat;
+    height: 100vh;
+    padding-top: 5vh;
+}
+
+/* Div bouton "faites tourner la roue du destin */
+
+#spin_button {
+    box-shadow: 0 0 15px #44ff0041;
+    background-color: rgba(0, 0, 0, 0.342);
+    margin: auto;
+    width: 200px;
+    height: 17vh;
+    border-radius: 15px;
+    padding: 20px;
+    display: block;
+}
+
+.pulse {
+    animation: pulsasion infinite 2s cubic-bezier(0, 0, 1, 1);
+}
+
+@keyframes pulsasion {
+    from {
+        transform: scale(1);
+    }
+
+    10% {
+        transform: scale(1.05);
+    }
+
+    15% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.05);
+    }
+
+    35% {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+#spin_button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 15px #44ff0088;
+    transition: 0.4s;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+#spin_button p {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+#axes {
+    width: 85px;
+    display: block;
+    margin: auto;
+}
+
+/* div roue du destin */
+
+#wheel {
+    margin-top: 5vh;
+}
+
+#sword {
+    display: block;
+    width: 70px;
+    margin: auto;
+}
+
+#dragon_wheel {
+    display: block;
+    width: 250px;
+    margin: auto;
+}
+
+.roule {
+    animation: rotationRoue infinite 0.7s cubic-bezier(0, 0, 1, 1);
+}
+
+@keyframes rotationRoue {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* div gain */
+
+#gain {
+    box-shadow: 0 0 15px #44ff0052;
+    background-color: rgba(0, 0, 0, 0.342);
+    margin: 5vh auto;
+    width: 330px;
+    border-radius: 15px;
+    padding: 20px;
+    display: block;
+    position: relative;
+}
+
+#gain p {
+    text-align: center;
+    text-shadow: 0 0 15px #44ff0088;
+    font-size: 1.2rem;
+}
+
+/* réalisation d'un cadre qui entoure la récompense */
+
+.gift_border {
+    border: 5px solid transparent;
+    border-image-source: url("../assets/img/roulette/elden-ring-border-leaf-removebg-preview.png");
+    border-image-slice: 0 0 60 0;
+    border-image-width: 5px 0px 5px 0px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: repeat repeat;
+    padding: 2px 0;
+    width: auto;
+    text-shadow: 0 0 20px #3bdd00;
+    font-weight: bold;
+}
+
+/* FOOTER BY RAMY */
+
+footer div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    line-height: 25px;
+}
+
+#team {
+    /* margin-left: 35%; */
+    margin-top: 30px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 1), rgba(8, 43, 8, 1), rgba(8, 43, 8, 1), rgba(0, 0, 0, 1));
+    color: white;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
